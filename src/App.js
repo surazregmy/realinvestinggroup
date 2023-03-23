@@ -1,5 +1,8 @@
-import { Button, Form, Input } from "antd";
+import { Button, Col, Form, Input, Row, Image } from "antd";
 import "./App.css";
+import Airplane from "../src/images/airplane.png";
+import Cruise from "../src/images/cruise.png";
+import Red from "../src/images/red.png";
 
 function App() {
   const onFinish = (values) => {
@@ -17,7 +20,7 @@ function App() {
           </div> */}
           <div className="welcome" style={{ textAlign: "center" }}>
             <p
-              style={{ color: "white", fontSize: "50px", fontWeight: "bolder" }}
+              style={{ color: "white", fontSize: "40px", fontWeight: "bolder" }}
             >
               WELCOME!
             </p>
@@ -56,7 +59,47 @@ function App() {
                 along with Special Incentives <br></br>for you and your Family
                 to Enjoy!
               </h2>
-
+              <div className="icon" style={{ textAlign: "center" }}>
+                <Row
+                  gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}
+                  justify="space-around"
+                >
+                  <Col className="gutter-row">
+                    <div>
+                      <Image
+                        preview={false}
+                        height={60}
+                        width={60}
+                        src={Airplane}
+                      ></Image>
+                      <h3>
+                        Complimentary Vacations <br></br> to Europe, Asia, and
+                        Africa
+                      </h3>
+                    </div>
+                  </Col>
+                  <Col className="gutter-row">
+                    <Image
+                      preview={false}
+                      height={60}
+                      width={60}
+                      src={Cruise}
+                    ></Image>
+                    <h3>Caribbean Cruises</h3>
+                  </Col>
+                  <Col className="gutter-row">
+                    <div style={{ borderRadius: "50%" }}>
+                      <Image
+                        preview={false}
+                        height={60}
+                        width={60}
+                        src={Red}
+                      ></Image>
+                    </div>
+                    <h3> Annual Appreciation Events</h3>
+                  </Col>
+                </Row>
+              </div>
               <div className="joinform">
                 <div className="formcenter center-screen">
                   <Form
@@ -67,7 +110,7 @@ function App() {
                     onFinish={onFinish}
                     onFinishFailed={onFinishFailed}
                     autoComplete="off"
-                    style={{ minWidth: "375px" }}
+                    style={{ minWidth: "350px" }}
                   >
                     <Form.Item
                       name="username"
@@ -88,7 +131,7 @@ function App() {
                         type="primary"
                         htmlType="submit"
                         style={{
-                          width: "375px",
+                          width: "350px",
                           color: "white",
                           backgroundColor: "green",
                           fontWeight: "bolder",
