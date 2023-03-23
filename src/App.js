@@ -41,7 +41,7 @@ function App() {
                         return (
                           <span
                             key={key}
-                            style={i == 0 ? { color: "green" } : {}}
+                            style={i === 0 ? { color: "green" } : {}}
                           >
                             {char}
                           </span>
