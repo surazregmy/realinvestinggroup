@@ -11,11 +11,11 @@ function App() {
   };
   return (
     <div className="App">
-      <section className="image" style={{ height: "100vh" }}>
+      <section className="image" style={{ minHeight: "100vh" }}>
         <div className="container" style={{ textAlign: "center" }}>
-          <div className="header" style={{ textAlign: "center" }}>
+          {/* <div className="header" style={{ textAlign: "center" }}>
             <h1 style={{ color: "white" }}>RealInvesting Group</h1>
-          </div>
+          </div> */}
           <div className="welcome" style={{ textAlign: "center" }}>
             <p
               style={{ color: "white", fontSize: "50px", fontWeight: "bolder" }}
@@ -24,31 +24,33 @@ function App() {
             </p>
           </div>
           <div>
+            <hp
+              style={{
+                color: "green",
+                fontSize: "50px",
+                fontWeight: "bolder",
+              }}
+            >
+              Real Estate Wealth Starts Here.
+            </hp>
+          </div>
+
+          <div
+            className="Real Estate Wealth Starts Here"
+            style={{ textAlign: "center" }}
+          >
+            <p
+              style={{ color: "white", fontSize: "50px", fontWeight: "bolder" }}
+            >
+              #1 Choice for Investors
+            </p>
+          </div>
+
+          <div>
             <div
               className="signupform"
               style={{ textAlign: "center", color: "white" }}
             >
-              <ReactTypingEffect
-                text={"#1 Choice for Investors"}
-                cursorRenderer={(cursor) => <h1>{cursor}</h1>}
-                displayTextRenderer={(text, i) => {
-                  return (
-                    <h1>
-                      {text.split("").map((char, i) => {
-                        const key = `${i}`;
-                        return (
-                          <span
-                            key={key}
-                            style={i === 0 ? { color: "green" } : {}}
-                          >
-                            {char}
-                          </span>
-                        );
-                      })}
-                    </h1>
-                  );
-                }}
-              ></ReactTypingEffect>
               <h2>
                 Join our 100's of investors for Toronto & Calgary's Exclusive
                 Pre-construction Projects
@@ -86,7 +88,7 @@ function App() {
                           width: "375px",
                           color: "white",
                           backgroundColor: "green",
-                          fontSize: "20px",
+                          fontWeight: "bolder",
                         }}
                         size="large"
                       >
