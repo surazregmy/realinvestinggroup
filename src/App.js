@@ -16,7 +16,6 @@ function App() {
           <div className="header" style={{ textAlign: "center" }}>
             <h1 style={{ color: "white" }}>RealInvesting Group</h1>
           </div>
-          <br></br>
           <div className="welcome" style={{ textAlign: "center" }}>
             <p
               style={{ color: "white", fontSize: "50px", fontWeight: "bolder" }}
@@ -24,7 +23,6 @@ function App() {
               Welcome
             </p>
           </div>
-          <br></br>
           <div>
             <div
               className="signupform"
