@@ -19,7 +19,7 @@ function App() {
             <p
               style={{ color: "white", fontSize: "50px", fontWeight: "bolder" }}
             >
-              Welcome
+              WELCOME!
             </p>
           </div>
           <div>
@@ -50,11 +50,12 @@ function App() {
               className="signupform"
               style={{ textAlign: "center", color: "white" }}
             >
-              <h2>
-                Join our 100's of investors for Toronto & Calgary's Exclusive
-                Pre-construction Projects
+              <h2 style={{ lineHeight: "1.5" }}>
+                Sign Up Now to Receive Free and Exclusive Access to
+                Pre-Construction Projects <br></br> in Toronto and Calgary,
+                along with Special Incentives <br></br>for you and your Family
+                to Enjoy!
               </h2>
-              <h3>Enter Your Email Address!</h3>
 
               <div className="joinform">
                 <div className="formcenter center-screen">
@@ -77,7 +78,10 @@ function App() {
                         },
                       ]}
                     >
-                      <Input size="large" />
+                      <Input
+                        size="large"
+                        placeholder=" Enter Your Email Address!"
+                      />
                     </Form.Item>
                     <Form.Item>
                       <Button
