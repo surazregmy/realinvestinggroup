@@ -1,5 +1,4 @@
 import { Button, Form, Input } from "antd";
-import ReactTypingEffect from "react-typing-effect";
 import "./App.css";
 
 function App() {
