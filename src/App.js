@@ -1,15 +1,31 @@
-import { Button, Col, Form, Input, Row, Image } from "antd";
+import React, { useState, useEffect } from "react";
+import { Button, Col, Form, Input, Row, Image, Radio } from "antd";
 import "./App.css";
 import Airplane from "../src/images/airplane.png";
 import Cruise from "../src/images/cruise.png";
 import Red from "../src/images/red.png";
 
 function App() {
+  const [initialEmail, setInitialEmail] = useState("email");
+  const [isMailLoaded, setisMailLoaded] = useState(false);
+  useEffect(() => {
+    const query = new URLSearchParams(window.location.search);
+    const initialEmail = query.get("email");
+    if (initialEmail) setInitialEmail(initialEmail);
+    setisMailLoaded(true);
+  }, []);
+
   const onFinish = (values) => {
     console.log("Success:", values);
   };
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
+  };
+
+  const [value, setValue] = useState(1);
+  const onChange = (e) => {
+    console.log("radio checked", e.target.value);
+    setValue(e.target.value);
   };
   return (
     <div className="App">
@@ -113,19 +129,51 @@ function App() {
                     style={{ minWidth: "350px" }}
                   >
                     <Form.Item
-                      name="username"
+                      label=<h3 style={{ color: "white", paddingTop: "25px" }}>
+                        I'm Ready to Invest
+                      </h3>
+                      initialValue="asap"
+                      name="readyTo"
                       rules={[
                         {
                           required: true,
-                          message: "Please input your email!",
+                          message: "Please input duration!",
                         },
                       ]}
                     >
-                      <Input
-                        size="large"
-                        placeholder=" Enter Your Email Address!"
-                      />
+                      <Radio.Group onChange={onChange} value={value}>
+                        <Radio value="asap">
+                          <h3 style={{ color: "white" }}>ASAP</h3>
+                        </Radio>
+                        <Radio value="one">
+                          {" "}
+                          <h3 style={{ color: "white" }}> 1-2 Months</h3>
+                        </Radio>
+                        <Radio value="two">
+                          <h3 style={{ color: "white" }}> 2-3 Months</h3>
+                        </Radio>
+                        <Radio value="three">
+                          <h3 style={{ color: "white" }}> 3-6Months</h3>
+                        </Radio>
+                      </Radio.Group>
                     </Form.Item>
+                    {isMailLoaded && (
+                      <Form.Item
+                        name="username"
+                        initialValue={initialEmail}
+                        rules={[
+                          {
+                            required: true,
+                            message: "Please input your email!",
+                          },
+                        ]}
+                      >
+                        <Input
+                          size="large"
+                          placeholder=" Enter Your Email Address!"
+                        />
+                      </Form.Item>
+                    )}
                     <Form.Item>
                       <Button
                         type="primary"
