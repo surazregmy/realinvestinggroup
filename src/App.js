@@ -157,6 +157,29 @@ function App() {
                         </Radio>
                       </Radio.Group>
                     </Form.Item>
+                    <Form.Item
+                      label=<h3 style={{ color: "white", paddingTop: "25px" }}>
+                        Looking for projects in
+                      </h3>
+                      initialValue="asap"
+                      name="readyTo"
+                      rules={[
+                        {
+                          required: true,
+                          message: "Please input duration!",
+                        },
+                      ]}
+                    >
+                      <Radio.Group onChange={onChange} value={value}>
+                        <Radio value="asap">
+                          <h3 style={{ color: "white" }}>Alberta</h3>
+                        </Radio>
+                        <Radio value="one">
+                          {" "}
+                          <h3 style={{ color: "white" }}>Ontario</h3>
+                        </Radio>
+                      </Radio.Group>
+                    </Form.Item>
                     {isMailLoaded && (
                       <Form.Item
                         name="username"
