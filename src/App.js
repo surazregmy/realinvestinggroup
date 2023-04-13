@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Col, Form, Input, Row, Image, Checkbox } from "antd";
+import { Button, Col, Form, Input, Row, Image, Checkbox, message } from "antd";
 import "./App.css";
 import Airplane from "../src/images/airplane.png";
 import Cruise from "../src/images/cruise.png";
@@ -17,6 +17,7 @@ function App() {
 
   const onFinish = (values) => {
     console.log("Success:", values);
+    message.success("Thank you for subscribing. You will soon hear from us!");
   };
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
