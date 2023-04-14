@@ -4,6 +4,7 @@ import "./App.css";
 import Airplane from "../src/images/airplane.png";
 import Cruise from "../src/images/cruise.png";
 import Red from "../src/images/red.png";
+import axios from "./api/axios";
 
 function App() {
   const [initialEmail, setInitialEmail] = useState("");
@@ -17,7 +18,19 @@ function App() {
 
   const onFinish = (values) => {
     console.log("Success:", values);
-    message.success("Thank you for subscribing. You will soon hear from us!");
+    //Send the email to artknowsgta and investorcare@gmail.com
+    axios
+      .post("/post/sendMail", values)
+      .then((response) => {
+        message.success(
+          "Thank you for subscribing. You will soon hear from us!"
+        );
+      })
+      .catch((error) => {
+        message.error(
+          "Error in Subsribing! Please stay with us till we fix it"
+        );
+      });
   };
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
@@ -362,13 +375,13 @@ function App() {
                       <Form.Item
                         labelCol={{ span: 6 }}
                         wrapperCol={{ span: 18 }}
-                        label=<h3 style={{ color: "white" }}>Project Name</h3>
+                        label=<h3 style={{ color: "white" }}>Interested In</h3>
                         style={{ width: "100%", textAlign: "center" }}
                         name="projectName"
                       >
                         <Input
                           size="large"
-                          placeholder="  interested project name !"
+                          placeholder="project name if known?"
                         />
                       </Form.Item>
 
