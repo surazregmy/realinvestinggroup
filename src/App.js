@@ -20,19 +20,19 @@ function App() {
     console.log("Success:", values);
     //Send the email to artknowsgta and investorcare@gmail.com
     axios
-      .post("/post/sendMail", values)
+      .post("/posts/sendMail", values)
       .then((response) => {
         message.success(
           "Thank you for subscribing. You will soon hear from us!"
         );
       })
       .catch((error) => {
-        // message.error(
-        //   "Error in Subsribing! Please stay with us till we fix it"
-        // );
-        message.success(
-          "Thank you for subscribing. You will soon hear from us!"
+        message.error(
+          "Error in Subsribing! Please stay with us till we fix it"
         );
+        // message.success(
+        //   "Thank you for subscribing. You will soon hear from us!"
+        // );
       });
   };
   const onFinishFailed = (errorInfo) => {
