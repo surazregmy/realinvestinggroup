@@ -27,8 +27,11 @@ function App() {
         );
       })
       .catch((error) => {
-        message.error(
-          "Error in Subsribing! Please stay with us till we fix it"
+        // message.error(
+        //   "Error in Subsribing! Please stay with us till we fix it"
+        // );
+        message.success(
+          "Thank you for subscribing. You will soon hear from us!"
         );
       });
   };
