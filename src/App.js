@@ -359,8 +359,23 @@ function App() {
                         />
                       </Form.Item>
 
+                      <Form.Item
+                        labelCol={{ span: 6 }}
+                        wrapperCol={{ span: 18 }}
+                        label=<h3 style={{ color: "white" }}>Project Name</h3>
+                        style={{ width: "100%", textAlign: "center" }}
+                        name="projectName"
+                      >
+                        <Input
+                          size="large"
+                          placeholder="  interested project name !"
+                        />
+                      </Form.Item>
+
                       {isMailLoaded && (
                         <Form.Item
+                          labelCol={{ span: 6 }}
+                          wrapperCol={{ span: 18 }}
                           label=<h3 style={{ color: "white" }}>Email</h3>
                           style={{ width: "100%", textAlign: "center" }}
                           name="username"
